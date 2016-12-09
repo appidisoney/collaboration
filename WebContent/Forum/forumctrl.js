@@ -1,4 +1,4 @@
-var app = angular.module('forumApp',[]);
+/*var app = angular.module('forumApp',[]);*/
 app.controller('forumctrl', [ '$scope', '$http', function($scope, $http) {
 	var BASE_URL = 'http://localhost:8081/CollabServer';
 	$scope.getAllForum= function() {
@@ -43,9 +43,24 @@ app.controller('forumctrl', [ '$scope', '$http', function($scope, $http) {
 			$scope.getAllForum();
 		})
 	};
-	$scope.editforum=function(id,title,content){
+	
+$scope.getforum=function(id){
+		
+		console.log("iforum")
+		$http({
+			method: "GET",
+			url:BASE_URL+'/individualforum/'+id,
+		}).success(function(data,status,headers,config){
+			$location.path('/individualforum');
+			$rootScope.individualforums=data;
+			console.log(data)
+		}).error(function(data, status, headers, config) {
+			alert("Error");
+		});
+	}
+	/*$scope.editforum=function(id,title,content){
 		$scope.id=id;
 		$scope.title=title;
 		$scope.content=content;
-	}
+	}*/
 }]);

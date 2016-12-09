@@ -1,4 +1,4 @@
-var app = angular.module('myApp',[]);
+var app = angular.module('blogApp',[]);
 app.controller('blogcntrl', [ '$scope', '$http', function($scope, $http) {
 	var BASE_URL = 'http://localhost:8081/CollabServer';
 
