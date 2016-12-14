@@ -1,5 +1,5 @@
 /*var app = angular.module('forumApp',[]);*/
-app.controller('forumctrl', [ '$scope', '$http', function($scope, $http) {
+app.controller('forumctrl', [ '$scope','$location', '$http','$rootScope', function($scope,$location,$http,$rootScope) {
 	var BASE_URL = 'http://localhost:8081/CollabServer';
 	$scope.getAllForum= function() {
 		console.log("get all forum")
@@ -54,13 +54,14 @@ $scope.getforum=function(id){
 			$location.path('/individualforum');
 			$rootScope.individualforums=data;
 			console.log(data)
+			
 		}).error(function(data, status, headers, config) {
 			alert("Error");
 		});
 	}
-	/*$scope.editforum=function(id,title,content){
+	$scope.editforum=function(id,title,content){
 		$scope.id=id;
 		$scope.title=title;
 		$scope.content=content;
-	}*/
+	}
 }]);
