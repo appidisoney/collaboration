@@ -17,8 +17,12 @@
         	$http({
     			method:'GET',
     		url:BASE_URL+'/login/'+username+'/'+password
-    		}).success(function (response,data) {
-    			if(data!=null){
+    		}).success(function (response,data,status,headers,config) {
+    			$rootScope.currentuser=response;
+    			
+    					console.log(data)
+    			
+    			if(response!=null){
     				
     				 response = { success: true };
                 } else {
@@ -43,7 +47,9 @@
              $rootScope.globals = {
                  currentUser: {
                      username: username,
-                     authdata: authdata
+                     authdata: authdata,
+                     islogged:true,
+                     role:$rootScope.role
                  }
             };
  
@@ -54,6 +60,7 @@
         function ClearCredentials() {
             $rootScope.globals = {};
             $cookieStore.remove('globals');
+            $cookieStore.remove('uid');
             $http.defaults.headers.common.Authorization = 'Basic';
         }
     }

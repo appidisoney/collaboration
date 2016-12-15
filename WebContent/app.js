@@ -22,6 +22,11 @@ app.config(function($routeProvider,$locationProvider) {
     	templateUrl: "Register/Register.html",
     	controller: "userctrl"
     })
+    .when("/Userprofile",{
+    	templateUrl: "Register/Userprofile.html",
+    	controller: "userctrl"
+    })
+    
     .when("/login",{
     	templateUrl:"Login/Login.html",
     	controller:'LoginController',
@@ -35,10 +40,23 @@ app.config(function($routeProvider,$locationProvider) {
     	templateUrl: "Chat/chat.html",
     	controller: "chatController",
     })
-    .when("/jobs",{
+    .when("/job",{
     	templateUrl: "Job/viewjob.html",
     	controller: "jobctrl"
     })
+    .when("/job",{
+    	templateUrl: "Job/createjob.html",
+    	controller: "jobctrl"
+    })
+    
+    .when("/myfriends",{
+    	templateUrl: "Friend/MyFriends.html",
+    	controller: "myfriendctrl"
+    })
+    .when("/newrequests",{
+    	templateUrl: "Friend/newrequests.html",
+    	controller: "myfriendctrl"
+    })		
     .when("/individualforum",{
     	templateUrl: "Forum/IndividualForum.html",
 	controller: "commentctrl"

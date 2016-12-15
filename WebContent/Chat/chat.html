@@ -6,12 +6,23 @@
 <script type="text/javascript" src="chatController.js"></script>
 <script type="text/javascript" src="chatService.js"></script>
 </head>
-<body data-ng-app="myApp">
-<div data-ng-controller="chatController">
-<form data-ng-submit="addMessage()" name="messageForm">
-<input type="text" placeholder="Enter new Message" data-ng-model="message">
-<input type="submit" value="send">
-</form>
+<body data-ng-app="myApp" data-ng-controller="chatController">
+<div class="container">
+<form role="form" data-ng-submit="addMessage()" name="messageForm" class="form-horizontal">
+
+		  <div class="form-group">
+                    <label for="title" class="col-sm-3 control-label">Text here</label>
+                    <div class="col-sm-9">
+		<input type="text" placeholder="Enter new Message" data-ng-model="message"
+		 data-ng-model="title" class="form-control" autofocus>
+		</div></div>
+		
+		 <div class="form-group">
+                    <div class="col-sm-9 col-sm-offset-3">
+			<button type="submit" class="btn btn-primary ">Submit</button>
+			</div></div>
+	</form>
+	
 <p data-ng-repeat="message in messages | orderBy:'time':true" >
 <time>{{message.time | date:'HH:mm'}}</time>
 <span >{{message.message}}</span>
@@ -19,3 +30,11 @@
 </div>
 </body>
 </html>
+
+
+<!-- <body data-ng-app="myApp">
+<div data-ng-controller="chatController">
+<form data-ng-submit="addMessage()" name="messageForm">
+<input type="text" placeholder="Enter new Message" data-ng-model="message">
+<input type="submit" value="send">
+</form> -->

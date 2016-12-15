@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body data-ng-app="myApp" data-ng-controller="jobctrl">
+<div class="container">
+<form role="form" data-ng-submit="submit()" class="form-horizontal">
+
+		  <div class="form-group">
+                    <label for="title" class="col-sm-3 control-label">Title</label>
+                    <div class="col-sm-9">
+		<input type="text" data-ng-model="title" class="form-control" autofocus>
+		</div></div>
+		  <div class="form-group">
+                    <label for="title" class="col-sm-3 control-label">Company</label>
+                    <div class="col-sm-9">
+		 <input type="text" data-ng-model="company" class="form-control" autofocus> <br>
+		</div></div>
+		<div class="form-group">
+                    <label for="title" class="col-sm-3 control-label">Job Details</label>
+                    <div class="col-sm-9">
+		 <input type="text" data-ng-model="jobdetails" class="form-control" autofocus> <br>
+		</div></div>
+		<div class="form-group">
+                    <label for="title" class="col-sm-3 control-label">Date</label>
+                    <div class="col-sm-9">
+		 <input type="text" data-ng-model="date" class="form-control" autofocus> <br>
+		</div></div>	
+
+				  <!-- <div class="form-group">
+                    <label for="title" class="col-sm-3 control-label">Description</label>
+                    <div class="col-sm-9">
+		<textarea draggable="false" rows="13" data-ng-model="description" class="form-control" autofocus></textarea>
+		</div></div> -->
+		 <div class="form-group">
+                    <div class="col-sm-9 col-sm-offset-3">
+			<button type="submit" class="btn btn-primary ">Save Job</button>
+			</div></div>
+	</form>
+</div>
+
+
+
+
+<!-- <body data-ng-app="myApp">
+<form action="" data-ng-controller="jobctrl" data-ng-submit="submit()" >
+title:<input type="text" data-ng-model="title">
+company:<input type="text" data-ng-model="company">
+jobdetails:<input type="text" data-ng-model="jobdetails">
+ date:<input type="date" data-ng-model="lastdate">
+ <input type="submit">
+</form> -->
+</body>
+</html>
